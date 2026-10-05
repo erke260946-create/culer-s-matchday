@@ -1,0 +1,473 @@
+:root {
+  --ink: #0A1330;
+  --blue: #004D98;
+  --garnet: #A50044;
+  --gold: #EDBB00;
+  --chalk: #F2EFE6;
+  --grass: #0f5b3a;
+  --r: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--ink);
+  color: var(--chalk);
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+h1,
+h2,
+h3,
+.display {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: .02em;
+  line-height: .95;
+  font-weight: 400;
+}
+
+a {
+  color: var(--gold);
+}
+
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.navbar {
+  background: var(--ink);
+  border-bottom: 4px solid transparent;
+  border-image: repeating-linear-gradient(90deg,var(--blue) 0 24px,var(--garnet) 24px 48px) 1;
+}
+
+.navbar-brand {
+  font-family: 'Bebas Neue';
+  font-size: 1.8rem;
+  color: var(--chalk)!important;
+}
+
+.navbar-brand span {
+  color: var(--gold);
+}
+
+.nav-link {
+  color: var(--chalk)!important;
+  font-weight: 600;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  border-bottom-color: var(--gold);
+}
+
+.navbar-toggler {
+  border-color: var(--gold);
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+.btn-club {
+  background: var(--gold);
+  color: var(--ink);
+  font-family: 'Bebas Neue';
+  font-size: 1.4rem;
+  letter-spacing: .05em;
+  border: 0;
+  border-radius: var(--r) 0 var(--r) 0;
+  padding: .5rem 1.6rem;
+  transition: transform .2s,background .2s;
+}
+
+.btn-club:hover {
+  background: var(--chalk);
+  color: var(--garnet);
+  transform: translateY(-3px) skewX(-4deg);
+}
+
+.card-club {
+  background: var(--blue);
+  border: 0;
+  border-left: 8px solid var(--gold);
+  border-radius: 0 var(--r) var(--r) 0;
+  color: var(--chalk);
+}
+
+.card-club.garnet {
+  background: var(--garnet);
+}
+
+.card-club h3 {
+  font-size: 2rem;
+}
+
+.form-control,
+.form-select {
+  background: #14224f;
+  border: 2px solid var(--blue);
+  color: var(--chalk);
+  border-radius: 8px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background: #14224f;
+  color: var(--chalk);
+  border-color: var(--gold);
+  box-shadow: none;
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+.table-club {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--chalk);
+  --bs-table-border-color: #24366f;
+}
+
+.table-club thead th {
+  font-family: 'Bebas Neue';
+  font-size: 1.3rem;
+  font-weight: 400;
+  background: var(--blue);
+  color: var(--gold);
+}
+
+.table-club tbody tr:hover {
+  background: #14224f;
+}
+
+.pill {
+  display: inline-block;
+  width: 1.7rem;
+  height: 1.7rem;
+  line-height: 1.7rem;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: .85rem;
+  color: var(--ink);
+}
+
+.pill.W {
+  background: #4cc27a;
+}
+
+.pill.D {
+  background: var(--gold);
+}
+
+.pill.L {
+  background: #ff5d73;
+}
+
+.hero {
+  position: relative;
+  padding: 5rem 0 4rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .55;
+  background: repeating-linear-gradient(90deg,var(--blue) 0 9vw,var(--garnet) 9vw 18vw);
+  clip-path: inset(0 100% 0 0);
+  animation: wipe 1.4s cubic-bezier(.7,0,.2,1) .2s forwards;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg,rgba(10,19,48,.35),var(--ink));
+}
+
+@keyframes wipe {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.hero h1 {
+  font-size: clamp(4rem,14vw,10rem);
+  text-shadow: 0 4px 0 var(--ink);
+}
+
+.hero .lead {
+  max-width: 34rem;
+}
+
+.next {
+  display: inline-flex;
+  flex-direction: column;
+  background: var(--ink);
+  border: 2px solid var(--gold);
+  border-left-width: 10px;
+  border-radius: 0 var(--r) var(--r) 0;
+  padding: .6rem 1.2rem;
+}
+
+.next b {
+  font-size: 2.4rem;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.section {
+  padding: 3.5rem 0;
+}
+
+.motto {
+  background: var(--gold);
+  color: var(--ink);
+  padding: 1.5rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.motto p {
+  margin: 0;
+  display: inline-block;
+  font-family: 'Bebas Neue';
+  font-size: 2.4rem;
+  animation: slide 22s linear infinite;
+}
+
+@keyframes slide {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.pitch {
+  display: grid;
+  grid-template-rows: repeat(4,1fr);
+  gap: .5rem;
+  min-height: 640px;
+  padding: 1.2rem .5rem;
+  border: 4px solid var(--chalk);
+  border-radius: var(--r);
+  background: repeating-linear-gradient(0deg,var(--grass) 0 12.5%,#136a43 12.5% 25%);
+  position: relative;
+}
+
+.pitch::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top: 3px solid rgba(242,239,230,.5);
+  pointer-events: none;
+}
+
+.line {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.player {
+  background: none;
+  border: 0;
+  color: var(--chalk);
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+  padding: .2rem;
+  z-index: 1;
+}
+
+.player .shirt {
+  display: grid;
+  place-items: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  margin: 0 auto .15rem;
+  border-radius: 50%;
+  font-family: 'Bebas Neue';
+  font-size: 1.7rem;
+  background: linear-gradient(90deg,var(--blue) 50%,var(--garnet) 50%);
+  border: 3px solid var(--gold);
+  transition: transform .25s;
+}
+
+.player:hover .shirt,
+.player:focus-visible .shirt {
+  transform: scale(1.25) rotate(-6deg);
+}
+
+.player span.nm {
+  font-size: .85rem;
+  text-shadow: 0 1px 3px #000;
+}
+
+.pcard {
+  display: none;
+}
+
+.squad:not(:has(.player:hover, .player:focus)) #i-none {
+  display: block;
+}
+
+.squad:has(#p-gk:hover) #i-gk,
+.squad:has(#p-gk:focus) #i-gk {
+  display: block;
+}
+
+.squad:has(#p-can:hover) #i-can,
+.squad:has(#p-can:focus) #i-can {
+  display: block;
+}
+
+.squad:has(#p-chr:hover) #i-chr,
+.squad:has(#p-chr:focus) #i-chr {
+  display: block;
+}
+
+.squad:has(#p-cub:hover) #i-cub,
+.squad:has(#p-cub:focus) #i-cub {
+  display: block;
+}
+
+.squad:has(#p-eri:hover) #i-eri,
+.squad:has(#p-eri:focus) #i-eri {
+  display: block;
+}
+
+.squad:has(#p-rod:hover) #i-rod,
+.squad:has(#p-rod:focus) #i-rod {
+  display: block;
+}
+
+.squad:has(#p-ped:hover) #i-ped,
+.squad:has(#p-ped:focus) #i-ped {
+  display: block;
+}
+
+.squad:has(#p-fer:hover) #i-fer,
+.squad:has(#p-fer:focus) #i-fer {
+  display: block;
+}
+
+.squad:has(#p-yam:hover) #i-yam,
+.squad:has(#p-yam:focus) #i-yam {
+  display: block;
+}
+
+.squad:has(#p-rap:hover) #i-rap,
+.squad:has(#p-rap:focus) #i-rap {
+  display: block;
+}
+
+.squad:has(#p-gor:hover) #i-gor,
+.squad:has(#p-gor:focus) #i-gor {
+  display: block;
+}
+
+.info {
+  position: sticky;
+  top: 1rem;
+  min-height: 15rem;
+}
+
+.pcard .num {
+  font-family: 'Bebas Neue';
+  font-size: 7rem;
+  line-height: .8;
+  color: var(--gold);
+}
+
+.foot {
+  border-top: 4px solid var(--garnet);
+  padding: 2rem 0;
+  font-size: .9rem;
+  color: #b9c0d8;
+}
+
+.form-control:user-invalid,
+.form-select:user-invalid {
+  border-color: #ff5d73;
+}
+
+.toast-ok:target {
+  display: block;
+}
+
+.toast-ok {
+  display: none;
+  background: #4cc27a;
+  color: var(--ink);
+  font-weight: 700;
+  padding: .8rem 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+@media (max-width:767.98px) {
+  .hero {
+    padding: 3rem 0;
+  }
+
+  .next b {
+    font-size: 1.9rem;
+  }
+
+  .pitch {
+    min-height: 560px;
+  }
+
+  .player .shirt {
+    width: 2.9rem;
+    height: 2.9rem;
+    font-size: 1.4rem;
+  }
+
+  .player span.nm {
+    font-size: .72rem;
+  }
+
+  .info {
+    position: static;
+  }
+}
+
+@media (min-width:768px) and (max-width:1199.98px) {
+  .pitch {
+    min-height: 600px;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .hero::before {
+    animation: none;
+    clip-path: none;
+  }
+
+  .motto p {
+    animation: none;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
