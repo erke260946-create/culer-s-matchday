@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fan Card | Culer's Matchday</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <nav class="navbar navbar-expand-md" aria-label="Main">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Culer's <span>Matchday</span></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="squad.html">Squad</a></li>
+          <li class="nav-item"><a class="nav-link" href="matches.html">Matches</a></li>
+          <li class="nav-item"><a class="nav-link active" href="join.html" aria-current="page">Fan Card</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <main id="main">
+
+    <section class="section">
+      <div class="container">
+        <h1 class="display page-title">Get your Fan Card</h1>
+        <p class="lead mb-4">Fill in the form and watch your card appear. It is a free card for this fan site, not an official club membership.</p>
+
+        <div class="row g-5">
+          <div class="col-12 col-lg-7">
+            <h2 class="mb-3">Your details</h2>
+            <form id="fan-form" class="row g-3" novalidate>
+              <div class="col-12">
+                <label for="fullName" class="form-label">Full name</label>
+                <input id="fullName" name="fullName" type="text" class="form-control" autocomplete="name" aria-describedby="fullName-error">
+                <div class="invalid-feedback" id="fullName-error"></div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" name="email" type="email" class="form-control" autocomplete="email" aria-describedby="email-error">
+                <div class="invalid-feedback" id="email-error"></div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="phone" class="form-label">Phone</label>
+                <input id="phone" name="phone" type="tel" class="form-control" autocomplete="tel" placeholder="+7 701 123 4567" aria-describedby="phone-error">
+                <div class="invalid-feedback" id="phone-error"></div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="birth" class="form-label">Date of birth</label>
+                <input id="birth" name="birth" type="date" class="form-control" autocomplete="bday" aria-describedby="birth-error">
+                <div class="invalid-feedback" id="birth-error"></div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="since" class="form-label">Culer since (year)</label>
+                <input id="since" name="since" type="number" class="form-control" min="1899" inputmode="numeric" placeholder="e.g. 2010" aria-describedby="since-error">
+                <div class="invalid-feedback" id="since-error"></div>
+              </div>
+              <div class="col-12">
+                <label for="player" class="form-label">Favourite player</label>
+                <select id="player" name="player" class="form-select" aria-describedby="player-error">
+                  <option value="">Choose a player</option>
+                </select>
+                <div class="invalid-feedback" id="player-error"></div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="password" class="form-label">Password</label>
+                <input id="password" name="password" type="password" class="form-control" autocomplete="new-password" aria-describedby="password-error password-hint">
+                <div class="invalid-feedback" id="password-error"></div>
+                <div class="form-text" id="password-hint">At least 8 characters. This demo does not store or send it.</div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="confirm" class="form-label">Repeat password</label>
+                <input id="confirm" name="confirm" type="password" class="form-control" autocomplete="new-password" aria-describedby="confirm-error">
+                <div class="invalid-feedback" id="confirm-error"></div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="terms" name="terms" aria-describedby="terms-error">
+                  <label class="form-check-label" for="terms">I accept the fan rules: be kind and respect all supporters.</label>
+                  <div class="invalid-feedback" id="terms-error"></div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <button class="btn btn-club" type="submit">Get my Fan Card</button>
+              </div>
+              <div class="col-12">
+                <div class="form-success" role="status"></div>
+              </div>
+            </form>
+          </div>
+
+
+          <div class="col-12 col-lg-5">
+            <div class="sticky-lg-top pt-lg-2">
+              <h2 class="mb-3">Card preview</h2>
+              <div class="fan-card" id="fan-card" aria-hidden="true">
+                <img class="fc-shirt" src="images/shirt.svg" alt="Striped shirt on the fan card" width="64" height="64">
+                <div class="club">CULER'S MATCHDAY · FAN CARD</div>
+                <div class="fc-name" id="card-name">Your name</div>
+                <dl class="fc-meta">
+                  <div><dt>Favourite player</dt><dd id="card-player">Pick a player</dd></div>
+                  <div><dt>Culer since</dt><dd id="card-since">Enter a year</dd></div>
+                  <div><dt>Card ID</dt><dd class="fc-id" id="card-id">Not issued yet</dd></div>
+                </dl>
+              </div>
+              <p class="small mt-2">The card updates while you type. Your ID appears after you send the form.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <div class="container">
+      Fan project made for a web technologies course. Not affiliated with FC Barcelona.
+      Fonts: Google Fonts (Bebas Neue, Barlow). Built with Bootstrap 5.3 and jQuery 3.7.
+      Match data checked on 10 Nov 2026.
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/validate.js"></script>
+  <script src="js/join.js"></script>
+</body>
+
+</html>
